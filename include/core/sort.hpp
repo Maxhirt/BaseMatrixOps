@@ -26,19 +26,16 @@
 
 namespace bmo {
 
-inline
-void
-sort(ColVec_t& vec_in, const bool ascending = true)
-{
-    if (ascending) {
-        std::sort(vec_in.begin(), vec_in.end(), 
-            [](scalar_t a, scalar_t b) {return a < b;});
-    } else {
-        std::sort(vec_in.begin(), vec_in.end(), 
-            [](scalar_t a, scalar_t b) {return a > b;});
-    }
+inline void sort(ColVec_t &vec_in, const bool ascending = true) {
+  if (ascending) {
+    std::sort(vec_in.begin(), vec_in.end(),
+              [](scalar_t a, scalar_t b) { return a < b; });
+  } else {
+    std::sort(vec_in.begin(), vec_in.end(),
+              [](scalar_t a, scalar_t b) { return a > b; });
+  }
 }
 
-}
+} // namespace bmo
 
 #endif

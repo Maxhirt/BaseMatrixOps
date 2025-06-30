@@ -23,14 +23,14 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_SET_SIZE(x,nr,nc) (x).set_size(nr,nc)
-    #define BMO_MATOPS_SET_SIZE_POINTER(x,nr,nc) x->set_size(nr,nc)
+#define BMO_MATOPS_SET_SIZE(x, nr, nc) (x).set_size(nr, nc)
+#define BMO_MATOPS_SET_SIZE_POINTER(x, nr, nc) x->set_size(nr, nc)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    // resize is destructive for Eigen
-    #define BMO_MATOPS_SET_SIZE(x,nr,nc) (x).resize(nr,nc)
-    #define BMO_MATOPS_SET_SIZE_POINTER(x,nr,nc) x->resize(nr,nc)
+// resize is destructive for Eigen
+#define BMO_MATOPS_SET_SIZE(x, nr, nc) (x).resize(nr, nc)
+#define BMO_MATOPS_SET_SIZE_POINTER(x, nr, nc) x->resize(nr, nc)
 #endif
 
 //

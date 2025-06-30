@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_COUT arma::cout
+#define BMO_MATOPS_COUT arma::cout
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_COUT std::cout
+#define BMO_MATOPS_COUT std::cout
 #endif
 
 //

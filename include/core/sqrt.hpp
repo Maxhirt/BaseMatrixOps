@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_SQRT(x) arma::sqrt(x)
+#define BMO_MATOPS_SQRT(x) arma::sqrt(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_SQRT(x) (x).array().sqrt().matrix()
+#define BMO_MATOPS_SQRT(x) (x).array().sqrt().matrix()
 #endif
 
 //

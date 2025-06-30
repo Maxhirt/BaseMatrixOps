@@ -23,20 +23,21 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_ABS_MAX(x,y) arma::max(arma::abs(x),arma::abs(y))
+#define BMO_MATOPS_ABS_MAX(x, y) arma::max(arma::abs(x), arma::abs(y))
 
-    #define BMO_MATOPS_ABS_MAX_VAL(x) (arma::abs(x)).max()
-    #define BMO_MATOPS_COLWISE_ABS_MAX(x) arma::max(arma::abs(x),0)
-    #define BMO_MATOPS_ROWWISE_ABS_MAX(x) arma::max(arma::abs(x),1)
+#define BMO_MATOPS_ABS_MAX_VAL(x) (arma::abs(x)).max()
+#define BMO_MATOPS_COLWISE_ABS_MAX(x) arma::max(arma::abs(x), 0)
+#define BMO_MATOPS_ROWWISE_ABS_MAX(x) arma::max(arma::abs(x), 1)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    // #define BMO_MATOPS_MAX(x,y) x.cwiseMax(y)
-    #define BMO_MATOPS_ABS_MAX(x,y) (x).cwiseAbs().array().max((y).cwiseAbs().array())
+// #define BMO_MATOPS_MAX(x,y) x.cwiseMax(y)
+#define BMO_MATOPS_ABS_MAX(x, y)                                               \
+  (x).cwiseAbs().array().max((y).cwiseAbs().array())
 
-    #define BMO_MATOPS_ABS_MAX_VAL(x) (x).cwiseAbs().maxCoeff()
-    #define BMO_MATOPS_COLWISE_ABS_MAX(x) (x).cwiseAbs().colwise().maxCoeff()
-    #define BMO_MATOPS_ROWWISE_ABS_MAX(x) (x).cwiseAbs().rowwise().maxCoeff()
+#define BMO_MATOPS_ABS_MAX_VAL(x) (x).cwiseAbs().maxCoeff()
+#define BMO_MATOPS_COLWISE_ABS_MAX(x) (x).cwiseAbs().colwise().maxCoeff()
+#define BMO_MATOPS_ROWWISE_ABS_MAX(x) (x).cwiseAbs().rowwise().maxCoeff()
 #endif
 
 //

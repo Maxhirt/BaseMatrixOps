@@ -20,21 +20,20 @@
 
 #include "bmo_tests.hpp"
 
-int main()
-{
-    const int n_vals = 4;
+int main() {
+  const int n_vals = 4;
 
-    bmo::ColVec_t test_vec = BMO_MATOPS_ONE_COLVEC(n_vals);
-    
-    BMO_MATOPS_COUT << test_vec << BMO_MATOPS_ENDL;
+  bmo::ColVec_t test_vec = BMO_MATOPS_ONE_COLVEC(n_vals);
 
-    test_vec = BMO_MATOPS_LOG(test_vec);
+  BMO_MATOPS_COUT << test_vec << BMO_MATOPS_ENDL;
 
-    BMO_MATOPS_COUT << test_vec << BMO_MATOPS_ENDL;
+  test_vec = BMO_MATOPS_LOG(test_vec);
 
-    test_vec(n_vals - 1) = -1;
+  BMO_MATOPS_COUT << test_vec << BMO_MATOPS_ENDL;
 
-    BMO_MATOPS_COUT << test_vec << BMO_MATOPS_ENDL;
+  test_vec(n_vals - 1) = -1;
 
-    return 0;
+  BMO_MATOPS_COUT << test_vec << BMO_MATOPS_ENDL;
+
+  return 0;
 }

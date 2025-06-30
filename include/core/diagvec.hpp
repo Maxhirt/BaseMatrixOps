@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_EXTRACT_DIAG(x) arma::diagvec(x)
+#define BMO_MATOPS_EXTRACT_DIAG(x) arma::diagvec(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_EXTRACT_DIAG(x) (x).diagonal()
+#define BMO_MATOPS_EXTRACT_DIAG(x) (x).diagonal()
 #endif
 
 //

@@ -31,10 +31,10 @@ namespace bmo {
 #include "unit_vec.hpp"
 
 #ifdef BMO_ENABLE_EXTRA_EXPERIMENTAL
-    #include "cube_type.hpp"
-    #include "tesseract_type.hpp"
+#include "cube_type.hpp"
+#include "tesseract_type.hpp"
 #endif
 
-}
+} // namespace bmo
 
 #endif

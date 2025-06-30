@@ -23,19 +23,19 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_MIN(x,y) arma::min(x,y)
+#define BMO_MATOPS_MIN(x, y) arma::min(x, y)
 
-    #define BMO_MATOPS_MIN_VAL(x) (x).min()
-    #define BMO_MATOPS_COLWISE_MIN(x) arma::min(x,0)
-    #define BMO_MATOPS_ROWWISE_MIN(x) arma::min(x,1)
+#define BMO_MATOPS_MIN_VAL(x) (x).min()
+#define BMO_MATOPS_COLWISE_MIN(x) arma::min(x, 0)
+#define BMO_MATOPS_ROWWISE_MIN(x) arma::min(x, 1)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_MIN(x,y) (x).array().min((y).array())
+#define BMO_MATOPS_MIN(x, y) (x).array().min((y).array())
 
-    #define BMO_MATOPS_MIN_VAL(x) (x).minCoeff()
-    #define BMO_MATOPS_COLWISE_MIN(x) (x).colwise().minCoeff()
-    #define BMO_MATOPS_ROWWISE_MIN(x) (x).rowwise().minCoeff()
+#define BMO_MATOPS_MIN_VAL(x) (x).minCoeff()
+#define BMO_MATOPS_COLWISE_MIN(x) (x).colwise().minCoeff()
+#define BMO_MATOPS_ROWWISE_MIN(x) (x).rowwise().minCoeff()
 #endif
 
 //

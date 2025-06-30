@@ -22,33 +22,30 @@
 #define BMO_STATS_INCLUDES
 
 #ifndef BMO_RNG_ENGINE_TYPE
-    #define BMO_RNG_ENGINE_TYPE std::mt19937_64;
+#define BMO_RNG_ENGINE_TYPE std::mt19937_64;
 #endif
 
-namespace bmo
-{
-namespace stats
-{
+namespace bmo {
+namespace stats {
 
 using rand_engine_t = BMO_RNG_ENGINE_TYPE;
 
-template<typename T>
-using return_t = typename std::conditional<std::is_integral<T>::value,double,T>::type;
+template <typename T>
+using return_t =
+    typename std::conditional<std::is_integral<T>::value, double, T>::type;
 
-template<typename ...T>
-using common_t = typename std::common_type<T...>::type;
+template <typename... T> using common_t = typename std::common_type<T...>::type;
 
-template<typename ...T>
-using common_return_t = return_t<common_t<T...>>;
+template <typename... T> using common_return_t = return_t<common_t<T...>>;
 
 //
 
-#include "runif.hpp"
 #include "rnorm.hpp"
+#include "runif.hpp"
 
 #include "rind.hpp"
 
-}
-}
+} // namespace stats
+} // namespace bmo
 
 #endif

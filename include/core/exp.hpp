@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_EXP(x) arma::exp(x)
+#define BMO_MATOPS_EXP(x) arma::exp(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_EXP(x) (x).array().exp().matrix()
+#define BMO_MATOPS_EXP(x) (x).array().exp().matrix()
 #endif
 
 //

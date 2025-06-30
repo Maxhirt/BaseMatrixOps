@@ -23,13 +23,14 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_ARRAY_ADD_SCALAR(x,a) (x) + (a)
-    #define BMO_MATOPS_ARRAY_ADD_DIV_SCALARS(x,a,b) ((x) + (a)) / (b)
+#define BMO_MATOPS_ARRAY_ADD_SCALAR(x, a) (x) + (a)
+#define BMO_MATOPS_ARRAY_ADD_DIV_SCALARS(x, a, b) ((x) + (a)) / (b)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_ARRAY_ADD_SCALAR(x,a) ((x).array() + (a)).matrix()
-    #define BMO_MATOPS_ARRAY_ADD_DIV_SCALARS(x,a,b) ( ((x).array() + (a)) / (b) ).matrix()
+#define BMO_MATOPS_ARRAY_ADD_SCALAR(x, a) ((x).array() + (a)).matrix()
+#define BMO_MATOPS_ARRAY_ADD_DIV_SCALARS(x, a, b)                              \
+  (((x).array() + (a)) / (b)).matrix()
 #endif
 
 //

@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_DOT_PROD(x,y) arma::dot(x,y)
+#define BMO_MATOPS_DOT_PROD(x, y) arma::dot(x, y)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_DOT_PROD(x,y) (x).dot(y)
+#define BMO_MATOPS_DOT_PROD(x, y) (x).dot(y)
 #endif
 
 //

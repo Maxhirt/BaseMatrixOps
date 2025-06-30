@@ -23,15 +23,19 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_SUM(x) arma::sum(x)
-    #define BMO_MATOPS_ROWWISE_SUM(x) arma::sum(x,1) // for each row, sum the elements
-    #define BMO_MATOPS_COLWISE_SUM(x) arma::sum(x,0) // for each column, sum the elements
+#define BMO_MATOPS_SUM(x) arma::sum(x)
+#define BMO_MATOPS_ROWWISE_SUM(x)                                              \
+  arma::sum(x, 1) // for each row, sum the elements
+#define BMO_MATOPS_COLWISE_SUM(x)                                              \
+  arma::sum(x, 0) // for each column, sum the elements
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_SUM(x) (x).sum()
-    #define BMO_MATOPS_ROWWISE_SUM(x) (x).rowwise().sum() // for each row, sum the elements
-    #define BMO_MATOPS_COLWISE_SUM(x) (x).colwise().sum() // for each column, sum the elements
+#define BMO_MATOPS_SUM(x) (x).sum()
+#define BMO_MATOPS_ROWWISE_SUM(x)                                              \
+  (x).rowwise().sum() // for each row, sum the elements
+#define BMO_MATOPS_COLWISE_SUM(x)                                              \
+  (x).colwise().sum() // for each column, sum the elements
 #endif
 
 //

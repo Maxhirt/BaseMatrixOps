@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_AS_SCALAR(x) arma::as_scalar(x)
+#define BMO_MATOPS_AS_SCALAR(x) arma::as_scalar(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_AS_SCALAR(x) (x).value()
+#define BMO_MATOPS_AS_SCALAR(x) (x).value()
 #endif
 
 //

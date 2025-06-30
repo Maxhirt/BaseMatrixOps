@@ -27,12 +27,16 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_LOG_DET(A) 2 * arma::accu( arma::log( arma::diagvec(arma::chol(A,"lower")) ) )
+#define BMO_MATOPS_LOG_DET(A)                                                  \
+  2 * arma::accu(arma::log(arma::diagvec(arma::chol(A, "lower"))))
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    // #define BMO_MATOPS_LOG_DET(A) ( (A).llt().matrixL().diagonal().array().log() * 2 ).sum() // Eigen triangular view does not have a 'diagonal()' member function
-    #define BMO_MATOPS_LOG_DET(A) ( (A).llt().matrixLLT().diagonal().array().log() * 2 ).sum()
+// #define BMO_MATOPS_LOG_DET(A) ( (A).llt().matrixL().diagonal().array().log()
+// * 2 ).sum() // Eigen triangular view does not have a 'diagonal()' member
+// function
+#define BMO_MATOPS_LOG_DET(A)                                                  \
+  ((A).llt().matrixLLT().diagonal().array().log() * 2).sum()
 #endif
 
 //

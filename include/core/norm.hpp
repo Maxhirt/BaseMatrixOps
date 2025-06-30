@@ -27,20 +27,21 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_L1NORM(x) arma::norm(x,1)
-    #define BMO_MATOPS_L2NORM(x) arma::norm(x,2)
-    #define BMO_MATOPS_LPNORM(x,p) arma::norm(x,p)
-    #define BMO_MATOPS_LINFNORM(x) arma::norm(x,"inf")
-    #define BMO_MATOPS_LMINFNORM(x) arma::norm(x,"-inf")
+#define BMO_MATOPS_L1NORM(x) arma::norm(x, 1)
+#define BMO_MATOPS_L2NORM(x) arma::norm(x, 2)
+#define BMO_MATOPS_LPNORM(x, p) arma::norm(x, p)
+#define BMO_MATOPS_LINFNORM(x) arma::norm(x, "inf")
+#define BMO_MATOPS_LMINFNORM(x) arma::norm(x, "-inf")
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_L1NORM(x) (x).array().abs().sum()
-    #define BMO_MATOPS_L2NORM(x) (x).norm()
-    // #define BMO_MATOPS_LPNORM(x,p) x.lpNorm<p>()
-    #define BMO_MATOPS_LPNORM(x,p) std::pow( (x).array().abs().pow(p).sum() , 1.0 / static_cast<double>(p) )
-    #define BMO_MATOPS_LINFNORM(x) (x).lpNorm<Eigen::Infinity>()
-    #define BMO_MATOPS_LMINFNORM(x) (x).cwiseAbs().minCoeff()
+#define BMO_MATOPS_L1NORM(x) (x).array().abs().sum()
+#define BMO_MATOPS_L2NORM(x) (x).norm()
+// #define BMO_MATOPS_LPNORM(x,p) x.lpNorm<p>()
+#define BMO_MATOPS_LPNORM(x, p)                                                \
+  std::pow((x).array().abs().pow(p).sum(), 1.0 / static_cast<double>(p))
+#define BMO_MATOPS_LINFNORM(x) (x).lpNorm<Eigen::Infinity>()
+#define BMO_MATOPS_LMINFNORM(x) (x).cwiseAbs().minCoeff()
 #endif
 
 //

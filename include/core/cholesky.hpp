@@ -27,14 +27,14 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    // returns a lower triangular matrix
-    #define BMO_MATOPS_CHOL_LOWER(A) arma::chol(A,"lower")
+// returns a lower triangular matrix
+#define BMO_MATOPS_CHOL_LOWER(A) arma::chol(A, "lower")
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    // returns a lower triangular matrix
-    // #define BMO_MATOPS_CHOL_LOWER(A) (A).llt().matrixL()
-    #define BMO_MATOPS_CHOL_LOWER(A) (A).llt().matrixLLT()
+// returns a lower triangular matrix
+// #define BMO_MATOPS_CHOL_LOWER(A) (A).llt().matrixL()
+#define BMO_MATOPS_CHOL_LOWER(A) (A).llt().matrixLLT()
 #endif
 
 //

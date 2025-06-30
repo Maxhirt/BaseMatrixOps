@@ -25,15 +25,15 @@
 
 #include "misc/bmo_options.hpp"
 
-#include "misc/misc_math.hpp"
 #include "core/bmo_core.hpp"
+#include "misc/misc_math.hpp"
 
 #ifdef BMO_ENABLE_STATS_FEATURES
-    #include "stats/bmo_stats.hpp"
+#include "stats/bmo_stats.hpp"
 #endif
 
 #ifdef BMO_ENABLE_EXTRA_FEATURES
-    #include "extra/bmo_extra.hpp"
+#include "extra/bmo_extra.hpp"
 #endif
 
 //

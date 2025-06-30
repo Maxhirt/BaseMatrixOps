@@ -21,25 +21,22 @@
 #ifndef BMO_EXTRA_INDEX_MIN
 #define BMO_EXTRA_INDEX_MIN
 
-inline
-size_t
-index_min(const ColVec_t& x)
-{
-    size_t x_n = BMO_MATOPS_SIZE(x);
-    
-    size_t min_ind = 0;
-    double min_val = x(0);
+inline size_t index_min(const ColVec_t &x) {
+  size_t x_n = BMO_MATOPS_SIZE(x);
 
-    if (x_n > 1) {
-        for (size_t i = 1; i < x_n; ++i) {
-            if (x(i) < min_val) {
-                min_val = x(i);
-                min_ind = i;
-            }
-        }
+  size_t min_ind = 0;
+  double min_val = x(0);
+
+  if (x_n > 1) {
+    for (size_t i = 1; i < x_n; ++i) {
+      if (x(i) < min_val) {
+        min_val = x(i);
+        min_ind = i;
+      }
     }
+  }
 
-    return min_ind;
+  return min_ind;
 }
 
 #endif

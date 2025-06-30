@@ -25,15 +25,11 @@
 #ifndef BMO_EXTRA_UNIT_VEC
 #define BMO_EXTRA_UNIT_VEC
 
-inline
-ColVec_t
-unit_vec(const size_t j, 
-         const size_t n)
-{
-    ColVec_t ret = BMO_MATOPS_ZERO_COLVEC(n);
-    ret(j) = 1;
+inline ColVec_t unit_vec(const size_t j, const size_t n) {
+  ColVec_t ret = BMO_MATOPS_ZERO_COLVEC(n);
+  ret(j) = 1;
 
-    return ret;
+  return ret;
 }
 
 #endif

@@ -22,25 +22,24 @@
 
 #include "bmo_tests.hpp"
 
-int main()
-{
-    const int n_vals = 4;
+int main() {
+  const int n_vals = 4;
 
-    bmo::stats::rand_engine_t engine(1);
+  bmo::stats::rand_engine_t engine(1);
 
-    //
+  //
 
-    bmo::ColVec_t runif_test_vec = bmo::stats::runif_vec<double>(n_vals, engine);
-    
-    BMO_MATOPS_COUT << "original:\n" << runif_test_vec << BMO_MATOPS_ENDL;
+  bmo::ColVec_t runif_test_vec = bmo::stats::runif_vec<double>(n_vals, engine);
 
-    bmo::sort(runif_test_vec);
+  BMO_MATOPS_COUT << "original:\n" << runif_test_vec << BMO_MATOPS_ENDL;
 
-    BMO_MATOPS_COUT << "\nsort asc:\n" << runif_test_vec << BMO_MATOPS_ENDL;
+  bmo::sort(runif_test_vec);
 
-    bmo::sort(runif_test_vec, false);
+  BMO_MATOPS_COUT << "\nsort asc:\n" << runif_test_vec << BMO_MATOPS_ENDL;
 
-    BMO_MATOPS_COUT << "\nsort desc:\n" << runif_test_vec << BMO_MATOPS_ENDL;
+  bmo::sort(runif_test_vec, false);
 
-    return 0;
+  BMO_MATOPS_COUT << "\nsort desc:\n" << runif_test_vec << BMO_MATOPS_ENDL;
+
+  return 0;
 }

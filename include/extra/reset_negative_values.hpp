@@ -21,33 +21,27 @@
 #ifndef BMO_EXTRA_RESET_NEG_VALUES
 #define BMO_EXTRA_RESET_NEG_VALUES
 
-inline
-void
-reset_negative_values(const ColVec_t& vec_in, ColVec_t& vec_out)
-{
-    const size_t n = BMO_MATOPS_SIZE(vec_in);
+inline void reset_negative_values(const ColVec_t &vec_in, ColVec_t &vec_out) {
+  const size_t n = BMO_MATOPS_SIZE(vec_in);
 
-    for (size_t i = 0; i < n; ++i) {
-        if (vec_in(i) <= 0.0) {
-            vec_out(i) = 0.0;
-        }
+  for (size_t i = 0; i < n; ++i) {
+    if (vec_in(i) <= 0.0) {
+      vec_out(i) = 0.0;
     }
+  }
 }
 
-inline
-void
-reset_negative_rows(const ColVec_t& vec_in, Mat_t& mat_out)
-{
-    const size_t nr = BMO_MATOPS_SIZE(vec_in);
-    const size_t nc = BMO_MATOPS_NCOL(mat_out);
+inline void reset_negative_rows(const ColVec_t &vec_in, Mat_t &mat_out) {
+  const size_t nr = BMO_MATOPS_SIZE(vec_in);
+  const size_t nc = BMO_MATOPS_NCOL(mat_out);
 
-    for (size_t i = 0; i < nr; ++i) {
-        if (vec_in(i) <= 0.0) {
-            for (size_t j = 0; j < nc; ++j) {
-                mat_out(i,j) = 0.0;
-            }
-        }
+  for (size_t i = 0; i < nr; ++i) {
+    if (vec_in(i) <= 0.0) {
+      for (size_t j = 0; j < nc; ++j) {
+        mat_out(i, j) = 0.0;
+      }
     }
+  }
 }
 
 #endif

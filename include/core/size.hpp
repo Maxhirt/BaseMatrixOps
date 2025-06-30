@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_SIZE(x) static_cast<size_t>((x).n_elem)
+#define BMO_MATOPS_SIZE(x) static_cast<size_t>((x).n_elem)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_SIZE(x) static_cast<size_t>((x).size())
+#define BMO_MATOPS_SIZE(x) static_cast<size_t>((x).size())
 #endif
 
 //

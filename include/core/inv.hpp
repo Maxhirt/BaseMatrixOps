@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_INV(x) arma::inv(x)
+#define BMO_MATOPS_INV(x) arma::inv(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_INV(x) (x).inverse()
+#define BMO_MATOPS_INV(x) (x).inverse()
 #endif
 
 //

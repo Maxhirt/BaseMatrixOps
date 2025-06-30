@@ -23,12 +23,12 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_SET_VALUES_SCALAR(x,a) (x).fill(a)
+#define BMO_MATOPS_SET_VALUES_SCALAR(x, a) (x).fill(a)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    // .fill() also works for Eigen; .fill() is an alias of .setConstant()
-    #define BMO_MATOPS_SET_VALUES_SCALAR(x,a) (x).setConstant(a)
+// .fill() also works for Eigen; .fill() is an alias of .setConstant()
+#define BMO_MATOPS_SET_VALUES_SCALAR(x, a) (x).setConstant(a)
 #endif
 
 //

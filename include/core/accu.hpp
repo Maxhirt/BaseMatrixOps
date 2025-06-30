@@ -23,13 +23,13 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_ACCU(x) arma::accu(x)
-    #define BMO_MATOPS_ACCU_ABS(x) arma::accu(arma::abs(x))
+#define BMO_MATOPS_ACCU(x) arma::accu(x)
+#define BMO_MATOPS_ACCU_ABS(x) arma::accu(arma::abs(x))
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_ACCU(x) (x).sum()
-    #define BMO_MATOPS_ACCU_ABS(x) (x).cwiseAbs().sum()
+#define BMO_MATOPS_ACCU(x) (x).sum()
+#define BMO_MATOPS_ACCU_ABS(x) (x).cwiseAbs().sum()
 #endif
 
 //

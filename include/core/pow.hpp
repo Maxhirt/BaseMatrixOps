@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_POW(x,a) arma::pow(x,a)
+#define BMO_MATOPS_POW(x, a) arma::pow(x, a)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_POW(x,a) (x).array().pow(a).matrix()
+#define BMO_MATOPS_POW(x, a) (x).array().pow(a).matrix()
 #endif
 
 //

@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_SOLVE(A,B) arma::solve(A,B)
+#define BMO_MATOPS_SOLVE(A, B) arma::solve(A, B)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_SOLVE(A,B) (A).colPivHouseholderQr().solve(B)
+#define BMO_MATOPS_SOLVE(A, B) (A).colPivHouseholderQr().solve(B)
 #endif
 
 //

@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_DIAGMAT(x) arma::diagmat(x)
+#define BMO_MATOPS_DIAGMAT(x) arma::diagmat(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_DIAGMAT(x) (x).asDiagonal()
+#define BMO_MATOPS_DIAGMAT(x) (x).asDiagonal()
 #endif
 
 //

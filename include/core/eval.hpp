@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_EVAL(x) x
+#define BMO_MATOPS_EVAL(x) x
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_EVAL(x) (x).eval()
+#define BMO_MATOPS_EVAL(x) (x).eval()
 #endif
 
 //

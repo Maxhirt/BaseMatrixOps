@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_COS(x) arma::cos(x)
+#define BMO_MATOPS_COS(x) arma::cos(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_COS(x) (x).array().cos().matrix()
+#define BMO_MATOPS_COS(x) (x).array().cos().matrix()
 #endif
 
 //

@@ -23,15 +23,28 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_RANDI_VEC(j, a, b)    arma::randi<arma::vec>(j, arma::distr_param(a, b))
-    #define BMO_MATOPS_RANDI_ROWVEC(j, a, b) arma::randi<arma::rowvec>(j, arma::distr_param(a, b))
-    #define BMO_MATOPS_RANDI_MAT(j, k)       arma::randi<arma::mat>(j, k, arma::distr_param(a, b))
+#define BMO_MATOPS_RANDI_VEC(j, a, b)                                          \
+  arma::randi<arma::vec>(j, arma::distr_param(a, b))
+#define BMO_MATOPS_RANDI_ROWVEC(j, a, b)                                       \
+  arma::randi<arma::rowvec>(j, arma::distr_param(a, b))
+#define BMO_MATOPS_RANDI_MAT(j, k)                                             \
+  arma::randi<arma::mat>(j, k, arma::distr_param(a, b))
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_RANDI_VEC(j, a, b)    (a + (b-(a)) * (ColVec_t::Random(j).array() * 0.5 + 0.5)).matrix().cast<uint_t>()
-    #define BMO_MATOPS_RANDI_ROWVEC(j, a, b) (a + (b-(a)) * (ColVec_t::Random(j).array() * 0.5 + 0.5)).matrix().transpose().cast<uint_t>()
-    #define BMO_MATOPS_RANDI_MAT(j, k, a, b) (a + (b-(a)) * (Mat_t::Random(j,k).array() * 0.5 + 0.5)).matrix().cast<uint_t>()
+#define BMO_MATOPS_RANDI_VEC(j, a, b)                                          \
+  (a + (b - (a)) * (ColVec_t::Random(j).array() * 0.5 + 0.5))                  \
+      .matrix()                                                                \
+      .cast<uint_t>()
+#define BMO_MATOPS_RANDI_ROWVEC(j, a, b)                                       \
+  (a + (b - (a)) * (ColVec_t::Random(j).array() * 0.5 + 0.5))                  \
+      .matrix()                                                                \
+      .transpose()                                                             \
+      .cast<uint_t>()
+#define BMO_MATOPS_RANDI_MAT(j, k, a, b)                                       \
+  (a + (b - (a)) * (Mat_t::Random(j, k).array() * 0.5 + 0.5))                  \
+      .matrix()                                                                \
+      .cast<uint_t>()
 #endif
 
 //

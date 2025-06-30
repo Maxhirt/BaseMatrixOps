@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_HADAMARD_PROD(x,y) (x) % (y)
+#define BMO_MATOPS_HADAMARD_PROD(x, y) (x) % (y)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_HADAMARD_PROD(x,y) (x).cwiseProduct(y)
+#define BMO_MATOPS_HADAMARD_PROD(x, y) (x).cwiseProduct(y)
 #endif
 
 //

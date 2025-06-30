@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_NCOL(x) (x).n_cols
+#define BMO_MATOPS_NCOL(x) (x).n_cols
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_NCOL(x) (x).cols()
+#define BMO_MATOPS_NCOL(x) (x).cols()
 #endif
 
 //

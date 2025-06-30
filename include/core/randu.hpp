@@ -23,17 +23,20 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    // acces columns j through k
-    #define BMO_MATOPS_RANDU_VEC(j) arma::randu(j,1)
-    #define BMO_MATOPS_RANDU_ROWVEC(j) arma::randu(1,j)
-    #define BMO_MATOPS_RANDU_MAT(j,k) arma::randu(j,k)
+// acces columns j through k
+#define BMO_MATOPS_RANDU_VEC(j) arma::randu(j, 1)
+#define BMO_MATOPS_RANDU_ROWVEC(j) arma::randu(1, j)
+#define BMO_MATOPS_RANDU_MAT(j, k) arma::randu(j, k)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    // acces columns j through k
-    #define BMO_MATOPS_RANDU_VEC(j) (bmo::ColVec_t::Random(j).array() * 0.5 + 0.5).matrix()
-    #define BMO_MATOPS_RANDU_ROWVEC(j) (bmo::ColVec_t::Random(j).array() * 0.5 + 0.5).matrix().transpose()
-    #define BMO_MATOPS_RANDU_MAT(j,k) (bmo::Mat_t::Random(j,k).array() * 0.5 + 0.5).matrix()
+// acces columns j through k
+#define BMO_MATOPS_RANDU_VEC(j)                                                \
+  (bmo::ColVec_t::Random(j).array() * 0.5 + 0.5).matrix()
+#define BMO_MATOPS_RANDU_ROWVEC(j)                                             \
+  (bmo::ColVec_t::Random(j).array() * 0.5 + 0.5).matrix().transpose()
+#define BMO_MATOPS_RANDU_MAT(j, k)                                             \
+  (bmo::Mat_t::Random(j, k).array() * 0.5 + 0.5).matrix()
 #endif
 
 //

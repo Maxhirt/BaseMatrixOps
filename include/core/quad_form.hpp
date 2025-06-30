@@ -27,15 +27,17 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_QUAD_FORM(x,A) arma::dot(x,A*x)
-    #define BMO_MATOPS_QUAD_FORM_INV(x,A) arma::dot(x,arma::solve(A,x))
+#define BMO_MATOPS_QUAD_FORM(x, A) arma::dot(x, A *x)
+#define BMO_MATOPS_QUAD_FORM_INV(x, A) arma::dot(x, arma::solve(A, x))
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    // #define BMO_MATOPS_QUAD_FORM(x,A) (x).dot( (A).dot(x) ).value()
-    #define BMO_MATOPS_QUAD_FORM(x,A) (x).dot( (A).dot(x) )
-    // #define BMO_MATOPS_QUAD_FORM_INV(x,A) (x).dot( (A).colPivHouseholderQr().solve(x) ).value()
-    #define BMO_MATOPS_QUAD_FORM_INV(x,A) (x).dot( (A).colPivHouseholderQr().solve(x) )
+// #define BMO_MATOPS_QUAD_FORM(x,A) (x).dot( (A).dot(x) ).value()
+#define BMO_MATOPS_QUAD_FORM(x, A) (x).dot((A).dot(x))
+// #define BMO_MATOPS_QUAD_FORM_INV(x,A) (x).dot(
+// (A).colPivHouseholderQr().solve(x) ).value()
+#define BMO_MATOPS_QUAD_FORM_INV(x, A)                                         \
+  (x).dot((A).colPivHouseholderQr().solve(x))
 #endif
 
 //

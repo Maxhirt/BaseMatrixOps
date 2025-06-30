@@ -27,11 +27,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_ENDL arma::endl
+#define BMO_MATOPS_ENDL arma::endl
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_ENDL std::endl
+#define BMO_MATOPS_ENDL std::endl
 #endif
 
 //

@@ -22,55 +22,54 @@
 #define BMO_ENABLE_EXTRA_EXPERIMENTAL
 #include "bmo_tests.hpp"
 
-int main()
-{
-    bmo::Cube_t<double> test_cube_1(4,2,3);
+int main() {
+  bmo::Cube_t<double> test_cube_1(4, 2, 3);
 
-    bmo::Mat_t test_mat_1 = test_cube_1.mat(0);
-    
-    BMO_MATOPS_COUT << test_mat_1 << BMO_MATOPS_ENDL;
+  bmo::Mat_t test_mat_1 = test_cube_1.mat(0);
 
-    const bmo::Mat_t& test_mat_2 = test_cube_1.mat(1);
-    
-    BMO_MATOPS_COUT << test_mat_2 << BMO_MATOPS_ENDL;
+  BMO_MATOPS_COUT << test_mat_1 << BMO_MATOPS_ENDL;
 
-    double elem_val_1 = test_cube_1(1,0,1);
+  const bmo::Mat_t &test_mat_2 = test_cube_1.mat(1);
 
-    std::cout << "elem_val_1 = " << elem_val_1 << std::endl;
+  BMO_MATOPS_COUT << test_mat_2 << BMO_MATOPS_ENDL;
 
-    double& elem_val_2 = test_cube_1(1,0,1);
+  double elem_val_1 = test_cube_1(1, 0, 1);
 
-    std::cout << "elem_val_2 = " << elem_val_2 << std::endl;
+  std::cout << "elem_val_1 = " << elem_val_1 << std::endl;
 
-    elem_val_2 = 1;
+  double &elem_val_2 = test_cube_1(1, 0, 1);
 
-    std::cout << "elem_val_2 = " << elem_val_2 << ". test_cube_1(1,0,1) = " << test_cube_1(1,0,1) << std::endl;
+  std::cout << "elem_val_2 = " << elem_val_2 << std::endl;
 
-    //
+  elem_val_2 = 1;
 
-    bmo::Cube_t<double> test_cube_2(std::move(test_cube_1));
+  std::cout << "elem_val_2 = " << elem_val_2
+            << ". test_cube_1(1,0,1) = " << test_cube_1(1, 0, 1) << std::endl;
 
-    std::cout << "test_cube_1.n_row = " << test_cube_1.n_row << std::endl;
-    std::cout << "test_cube_2.n_row = " << test_cube_2.n_row << std::endl;
+  //
 
-    bmo::Cube_t<double> test_cube_3 = std::move(test_cube_2);
+  bmo::Cube_t<double> test_cube_2(std::move(test_cube_1));
 
-    std::cout << "test_cube_2.n_row = " << test_cube_2.n_row << std::endl;
-    std::cout << "test_cube_3.n_row = " << test_cube_3.n_row << std::endl;
+  std::cout << "test_cube_1.n_row = " << test_cube_1.n_row << std::endl;
+  std::cout << "test_cube_2.n_row = " << test_cube_2.n_row << std::endl;
 
-    bmo::Cube_t<double> test_cube_4 = test_cube_3;
+  bmo::Cube_t<double> test_cube_3 = std::move(test_cube_2);
 
-    std::cout << "test_cube_3.n_row = " << test_cube_3.n_row << std::endl;
-    std::cout << "test_cube_4.n_row = " << test_cube_4.n_row << std::endl;
+  std::cout << "test_cube_2.n_row = " << test_cube_2.n_row << std::endl;
+  std::cout << "test_cube_3.n_row = " << test_cube_3.n_row << std::endl;
 
-    //
+  bmo::Cube_t<double> test_cube_4 = test_cube_3;
 
-    test_cube_1.setZero(6,4,3);
+  std::cout << "test_cube_3.n_row = " << test_cube_3.n_row << std::endl;
+  std::cout << "test_cube_4.n_row = " << test_cube_4.n_row << std::endl;
 
-    test_mat_1 = test_cube_1.mat(1);
-    
-    BMO_MATOPS_COUT << test_mat_1 << BMO_MATOPS_ENDL;
+  //
 
-    return 0;
+  test_cube_1.setZero(6, 4, 3);
+
+  test_mat_1 = test_cube_1.mat(1);
+
+  BMO_MATOPS_COUT << test_mat_1 << BMO_MATOPS_ENDL;
+
+  return 0;
 }
- 

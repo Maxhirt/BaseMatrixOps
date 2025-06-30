@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_TRACE(x) arma::trace(x)
+#define BMO_MATOPS_TRACE(x) arma::trace(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_TRACE(x) (x).trace()
+#define BMO_MATOPS_TRACE(x) (x).trace()
 #endif
 
 //

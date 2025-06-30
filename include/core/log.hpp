@@ -23,11 +23,11 @@
 //
 
 #ifdef BMO_ENABLE_ARMA_WRAPPERS
-    #define BMO_MATOPS_LOG(x) arma::log(x)
+#define BMO_MATOPS_LOG(x) arma::log(x)
 #endif
 
 #ifdef BMO_ENABLE_EIGEN_WRAPPERS
-    #define BMO_MATOPS_LOG(x) (x).array().log().matrix()
+#define BMO_MATOPS_LOG(x) (x).array().log().matrix()
 #endif
 
 //
